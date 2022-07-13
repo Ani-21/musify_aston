@@ -20,7 +20,15 @@ const HeaderWrapper = styled.div`
   }
 `;
 
-const iconWrapper = styled.div``;
+const CustomBtn = styled.button`
+  display: inline-block;
+  background: transparent;
+  border: 1px solid beige;
+  border-radius: 30px;
+  color: beige;
+  width: 150px;
+  font-size: 20px;
+`;
 
 interface HeaderProps {
   title?: string;
@@ -28,11 +36,13 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <HeaderWrapper>
-      <div>о нас</div>
+      <div>о платформе</div>
       <AiOutlineSearch />
       <div className="logo">Musify</div>
-      <MdFavoriteBorder />
-      <CgProfile />
+      {/* <MdFavoriteBorder /> */}
+      {/* <CgProfile /> */}
+      <CustomBtn>Вход</CustomBtn>
+      <CustomBtn>Регистрация</CustomBtn>
     </HeaderWrapper>
   );
 };

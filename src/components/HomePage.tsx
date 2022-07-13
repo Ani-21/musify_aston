@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 20px;
   font-size: 32px;
   text-transform: uppercase;
-  background-image: linear-gradient(to right, #d3cec7, #86774f);
+  background-image: linear-gradient(to right, #86774f, #a69c82);
   align-items: center;
   h1 {
     // color: red;
@@ -25,7 +25,6 @@ const HomePage = () => {
       <Container>
         <h1>Альбом месяца </h1>
       </Container>
-      <div>Найди свой любимый трек</div>
     </HomePageWrapper>
   );
 };
