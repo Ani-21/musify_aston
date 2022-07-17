@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { MdFavoriteBorder } from "react-icons/md";
@@ -41,8 +41,12 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       <div className="logo">Musify</div>
       {/* <MdFavoriteBorder /> */}
       {/* <CgProfile /> */}
-      <CustomBtn>Вход</CustomBtn>
-      <CustomBtn>Регистрация</CustomBtn>
+      <CustomBtn as={Link} to="/login">
+        Вход
+      </CustomBtn>
+      <CustomBtn as={Link} to="/register">
+        Регистрация
+      </CustomBtn>
     </HeaderWrapper>
   );
 };

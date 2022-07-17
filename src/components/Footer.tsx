@@ -16,11 +16,10 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  margin: 10px auto;
+  display: flex;
+  margin: 0 auto;
   align-items: center;
   jusify-content: space-between;
-  display: flex;
-  position: absolute;
 `;
 
 function Footer() {
@@ -30,8 +29,8 @@ function Footer() {
         <Container>
           <AiOutlineInstagram />
           <TbBrandTelegram />
-          <p>Musify </p>
-          <p> &copy; Ani Kvikvinia 2022</p>
+          <p>MUSIFY </p>
+          <p> &copy; HiddenName Developer 2022</p>
         </Container>
       </Wrapper>
     </footer>
