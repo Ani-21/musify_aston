@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import musPromo from "../assets/Musify_promo.mp4";
 
 const HomePageWrapper = styled.div`
   height: 100vh;
@@ -19,11 +20,24 @@ const Container = styled.div`
   }
 `;
 
+const VideoContainer = styled.div`
+  bottom: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+`;
+
 const HomePage = () => {
   return (
     <HomePageWrapper>
       <Container>
-        <h1>Альбом месяца </h1>
+        <h1> About </h1>
       </Container>
     </HomePageWrapper>
   );

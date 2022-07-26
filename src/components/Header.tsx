@@ -36,7 +36,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <HeaderWrapper>
-      <div>о платформе</div>
+      <div>плейлисты</div>
       <AiOutlineSearch />
       <div className="logo">Musify</div>
       {/* <MdFavoriteBorder /> */}

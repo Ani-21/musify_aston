@@ -4,7 +4,7 @@ interface MusicState {
   value: string;
 }
 const initialState: MusicState = {
-  value: "music",
+  value: "",
 };
 
 const searchSlice = createSlice({

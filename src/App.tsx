@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
@@ -8,6 +8,8 @@ import { useAppDispatch, useAppSelector } from "./app/hooks";
 import { logged } from "./features/search/searchSlice";
 import { useFetchTracksQuery } from "./features/spotify/spotifySlice";
 import styled from "styled-components";
+import SearchBar from "./components/SearchBar";
+import Music from "./components/Music";
 
 const AppWrapper = styled.div`
   margin: 0px;
@@ -18,33 +20,37 @@ const AppWrapper = styled.div`
 const App: React.FC = () => {
   const musValue = useAppSelector((state) => state.searcher.value);
   const dispatch = useAppDispatch();
+  const { data, isFetching, error } = useFetchTracksQuery();
 
-  // const [data = [], isFetching] = useFetchTracksQuery();
+  const [tracksFound, setTracksFound] = useState([]);
 
   function handleClick() {
-    dispatch(logged("Big Love 🍀 by Fleetwood Mac"));
+    dispatch(logged(" 🍀 by Fleetwood Mac"));
   }
 
-  function ModuleGreet() {
+  // console.log(data?.tracks.items);
+  console.log(data);
+
+  const list = data?.tracks.items;
+
+  function MusicList() {
     return (
       <>
         <div>
-          <p>Hello 😄 Let's try your app!</p>
-          <p>Your fav track is ... {musValue} </p>
-          <button onClick={handleClick}>Click here 🔮</button>
+          {list?.map((item) => (
+            <Music key={item.data?.id} item={item} />
+          ))}
         </div>
-        {/* <div>Number of tracks fetched: {data.length}</div> */}
       </>
     );
   }
 
   return (
     <AppWrapper>
-      {/* <Link to="/login">Login</Link>
-      <Link to="/register">Register</Link> */}
       <Header />
-      <ModuleGreet />
+      <SearchBar changeSearchState={() => console.log("hi")} />
       <HomePage />
+      <MusicList />
       <Footer />
     </AppWrapper>
   );
